@@ -17,10 +17,10 @@ func binarySearch(arr *[]int, leftIndex int, rightIndex int, findVal int)  {
 	middle := (leftIndex + rightIndex) / 2
 	if (*arr)[middle] > findVal {
 		//要查找的数，范围应该在 leftIndex 到 middle+1
-		BinaryFind(arr, leftIndex, middle-1, findVal)
+		binarySearch(arr, leftIndex, middle-1, findVal)
 	} else if (*arr)[middle] < findVal {
 		//要查找的数，范围应该在 middle+1 到 rightIndex
-		BinaryFind(arr, middle+1, rightIndex, findVal)
+		binarySearch(arr, middle+1, rightIndex, findVal)
 	} else {
 		fmt.Printf("找到了，下标为：%v \n", middle)
 	}
